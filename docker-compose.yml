@@ -18,16 +18,15 @@ services:
       - spaceage_wwwroot:/var/www
   tts:
     # TODO
-    image: alpine
+    image: ghcr.io/spaceagemp/tts/tts:latest
+    init: yes
     restart: always
-    command: sh
+    volumes:
+      - spaceage_tts_awscreds:/home/tts/.aws
   nginx:
     #image: nginx:alpine
     build: nginx
     restart: always
-    environment:
-      PUID: 10000
-      PGID: 10000
     volumes:
       - spaceage_wwwroot:/var/www
       - spaceage_ssl:/etc/nginx/ssl
@@ -43,4 +42,6 @@ volumes:
   spaceage_mysql:
     external: true
   spaceage_ssl:
+    external: true
+  spaceage_tts_awscreds:
     external: true
