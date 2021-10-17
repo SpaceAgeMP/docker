@@ -1,6 +1,6 @@
 FROM php:fpm-alpine
 
-RUN apk add --no-cache s6 zlib-dev libpng-dev jpeg-dev freetype-dev libjpeg-turbo-dev
+RUN apk add --no-cache s6 zlib-dev libpng-dev jpeg-dev freetype-dev libjpeg-turbo-dev libzip-dev
 
 RUN docker-php-ext-configure gd \
         --with-freetype \
