@@ -51,6 +51,8 @@ services:
   gmod:
     build: gmod
     restart: always
+    volumes:
+      - spaceage_server:/home/server
 
 volumes:
   spaceage_wwwroot:
@@ -58,4 +60,6 @@ volumes:
   spaceage_mysql:
     external: true
   spaceage_ssl:
+    external: true
+  spaceage_server:
     external: true
