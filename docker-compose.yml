@@ -8,8 +8,7 @@ services:
     volumes:
       - spaceage_mysql:/var/lib/mysql
   php:
-    #image: php:fpm-alpine
-    build: php
+    image: ghcr.io/spaceagemp/docker/php:latest
     restart: always
     links:
       - mysql:mysql
@@ -34,8 +33,7 @@ services:
       SENTRY_DSN_API: ${API_SENTRY_DSN_API}
       MIX_ENV: prod
   nginx:
-    #image: nginx:alpine
-    build: nginx
+    image: ghcr.io/spaceagemp/docker/nginx:latest
     restart: always
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
@@ -49,7 +47,7 @@ services:
       - tts:tts
       - api:api
   gmod:
-    build: gmod
+    image: ghcr.io/spaceagemp/docker/gmod:latest
     restart: always
     volumes:
       - spaceage_server:/home/server
