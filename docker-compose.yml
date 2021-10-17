@@ -49,8 +49,6 @@ services:
       - php:php
       - tts:tts
       - api:api
-    ports:
-      - 443:443
 
 volumes:
   spaceage_wwwroot:
