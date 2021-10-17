@@ -1,4 +1,4 @@
-FROM steamcmd/steamcmd:alpine
+FROM steamcmd/steamcmd:ubuntu
 
 RUN apk add --no-cache python3 py3-requests py3-yaml py3-pip git
 RUN pip3 install python_a2s
