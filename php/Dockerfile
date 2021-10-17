@@ -12,4 +12,5 @@ ENV PUID=1000
 ENV PGID=1000
 
 COPY etc/ /etc/
+COPY php-fpm.d/ /usr/local/etc/php-fpm.d/
 ENTRYPOINT ["s6-svscan", "/etc/s6"]
