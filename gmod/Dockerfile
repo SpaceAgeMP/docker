@@ -1,6 +1,6 @@
 FROM steamcmd/steamcmd:alpine
 
-RUN apk add --no-cache python3 py3-requests py3-yaml py3-pip
+RUN apk add --no-cache python3 py3-requests py3-yaml py3-pip git
 RUN pip3 install python_a2s
 
 RUN adduser server -D -u 1000 -g 1000 -s /bin/false
