@@ -9,6 +9,6 @@ USER server
 VOLUME /home/server
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/game
-
+ENV HOME=/home/server
 ENV STARLORD_CONFIG=spaceage_gooniverse
 ENTRYPOINT ["/usr/bin/python3", "/home/server/StarLord"]
