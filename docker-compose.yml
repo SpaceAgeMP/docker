@@ -1,19 +1,33 @@
 version: "2.4"
 services:
-  php:
-    image: php:fpm-alpine
+  mysql:
+    image: percona:latest
     restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes:
+      - spaceage_mysql:/var/lib/mysql
+  php:
+    #image: php:fpm-alpine
+    build: php
+    restart: always
+    user: 1000:1000
+    links:
+      - mysql:mysql
     volumes:
       - spaceage_wwwroot:/var/www
   tts:
     # TODO
     image: alpine
     restart: always
-    command: sleep 999999999
+    command: sh
   nginx:
     #image: nginx:alpine
     build: nginx
     restart: always
+    environment:
+      PUID: 10000
+      PGID: 10000
     volumes:
       - spaceage_wwwroot:/var/www
       - spaceage_ssl:/etc/nginx/ssl
@@ -21,10 +35,12 @@ services:
       - php:php
       - tts:tts
     ports:
-      - 80:80
+      - 443:443
 
 volumes:
   spaceage_wwwroot:
+    external: true
+  spaceage_mysql:
     external: true
   spaceage_ssl:
     external: true
