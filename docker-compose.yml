@@ -17,12 +17,21 @@ services:
     volumes:
       - spaceage_wwwroot:/var/www
   tts:
-    # TODO
     image: ghcr.io/spaceagemp/tts/tts:latest
     init: yes
     restart: always
     volumes:
       - spaceage_tts_awscreds:/home/tts/.aws
+  api:
+    image: ghcr.io/spaceagemp/space_age_api/api
+    restart: always
+    init: yes
+    environment:
+      - SENTRY_DSN_SRCDS
+      - SENTRY_DSN_API
+      - SECRET_KEY_BASE
+      - DATABASE_URL
+      - MIX_ENV=prod
   nginx:
     #image: nginx:alpine
     build: nginx
@@ -33,6 +42,7 @@ services:
     links:
       - php:php
       - tts:tts
+      - api:api
     ports:
       - 443:443
 
