@@ -5,8 +5,8 @@ RUN apt update && \
         rm -rf /var/cache/apt
 RUN pip3 install python_a2s
 
-RUN addgroup server --gid 1000 && \
-        adduser server --disabled-password --disabled-login --uid 1000 --gid 1000 --shell /bin/false
+RUN groupadd server -g 1000 && \
+        useradd server -u 1000 -g 1000 -s /bin/false
 USER server
 
 VOLUME /home/server
