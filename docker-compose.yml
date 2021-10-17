@@ -59,5 +59,3 @@ volumes:
     external: true
   spaceage_ssl:
     external: true
-  spaceage_tts_awscreds:
-    external: true
