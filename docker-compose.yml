@@ -1,0 +1,30 @@
+version: "2.4"
+services:
+  php:
+    image: php:fpm-alpine
+    restart: always
+    volumes:
+      - spaceage_wwwroot:/var/www
+  tts:
+    # TODO
+    image: alpine
+    restart: always
+    command: sleep 999999999
+  nginx:
+    #image: nginx:alpine
+    build: nginx
+    restart: always
+    volumes:
+      - spaceage_wwwroot:/var/www
+      - spaceage_ssl:/etc/nginx/ssl
+    links:
+      - php:php
+      - tts:tts
+    ports:
+      - 80:80
+
+volumes:
+  spaceage_wwwroot:
+    external: true
+  spaceage_ssl:
+    external: true
