@@ -48,6 +48,9 @@ services:
       - php:php
       - tts:tts
       - api:api
+  gmod:
+    build: gmod
+    restart: always
 
 volumes:
   spaceage_wwwroot:

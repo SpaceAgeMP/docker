@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-adduser -D -s /bin/false -u "$PUID" -g "$PGID" appuser
+adduser -D -s /bin/false -u "$PUID" -g "$PGID" appuser || true
 
 cat > /tmp/crontab <<EOF
 * * * * * sleep 54; /usr/local/bin/php /var/www/forums/cmd.php xf:run-jobs
