@@ -6,7 +6,7 @@ RUN docker-php-ext-configure gd \
         --with-freetype \
         --with-jpeg
 
-RUN docker-php-ext-install mysqli gd
+RUN docker-php-ext-install mysqli gd bcmath
 
 ENV PUID=1000
 ENV PGID=1000
