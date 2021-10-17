@@ -29,11 +29,11 @@ services:
     restart: always
     init: yes
     environment:
-      - SENTRY_DSN_SRCDS
-      - SENTRY_DSN_API
-      - SECRET_KEY_BASE
-      - DATABASE_URL
-      - MIX_ENV=prod
+      DATABASE_URL: ${API_DATABASE_URL}
+      SECRET_KEY_BASE: ${API_SECRET_KEY_BASE}
+      SENTRY_DSN_SRCDS: ${API_SENTRY_DSN_SRCDS}
+      SENTRY_DSN_API: ${API_SENTRY_DSN_API}
+      MIX_ENV: prod
   nginx:
     #image: nginx:alpine
     build: nginx
