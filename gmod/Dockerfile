@@ -1,7 +1,7 @@
 FROM steamcmd/steamcmd:ubuntu
 
 RUN apt update && \
-        apt --no-install-recommends -y install python3 python3-requests python3-yaml python3-pip git lsof && \
+        apt --no-install-recommends -y install python3 python3-requests python3-yaml python3-pip git ssh lsof && \
         rm -rf /var/cache/apt
 RUN pip3 install python_a2s
 
