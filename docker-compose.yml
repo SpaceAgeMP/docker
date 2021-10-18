@@ -23,7 +23,7 @@ services:
       AWS_ACCESS_KEY_ID: ${TTS_AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${TTS_AWS_SECRET_ACCESS_KEY}
   api:
-    image: ghcr.io/spaceagemp/space_age_api/api
+    image: ghcr.io/spaceagemp/space_age_api/api:latest
     restart: always
     init: yes
     environment:
