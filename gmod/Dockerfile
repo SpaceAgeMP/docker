@@ -9,8 +9,6 @@ RUN groupadd server -g 1000 && \
         useradd server -u 1000 -g 1000 -s /bin/false
 USER server
 
-VOLUME /home/server
-
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/game
 ENV HOME=/home/server
 ENV STARLORD_CONFIG=spaceage_gooniverse

@@ -8,13 +8,12 @@ services:
     volumes:
       - spaceage_mysql:/var/lib/mysql
   php:
-    #image: php:fpm-alpine
     build: php
     restart: always
     links:
       - mysql:mysql
     volumes:
-      - spaceage_wwwroot:/var/www
+      - spaceage_forums_html:/var/www/forums
   tts:
     image: ghcr.io/spaceagemp/tts/tts:latest
     init: yes
@@ -34,7 +33,6 @@ services:
       SENTRY_DSN_API: ${API_SENTRY_DSN_API}
       MIX_ENV: prod
   nginx:
-    #image: nginx:alpine
     build: nginx
     restart: always
     sysctls:
@@ -42,7 +40,7 @@ services:
     environment:
       DDNS_URL_IPV6: ${NGINX_DDNS_URL_IPV6}
     volumes:
-      - spaceage_wwwroot:/var/www
+      - spaceage_forums_html:/var/www/forums
       - spaceage_ssl:/etc/nginx/ssl
     links:
       - php:php
@@ -55,7 +53,7 @@ services:
       - spaceage_server:/home/server
 
 volumes:
-  spaceage_wwwroot:
+  spaceage_forums_html:
     external: true
   spaceage_mysql:
     external: true
