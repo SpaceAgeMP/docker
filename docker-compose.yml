@@ -31,7 +31,7 @@ services:
       AWS_ACCESS_KEY_ID: ${TTS_AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${TTS_AWS_SECRET_ACCESS_KEY}
     healthcheck:
-      test: 'curl -s -f "http://$${HOSTNAME}:4001/" >/dev/null || exit 1'
+      test: 'curl -s -f "http://$${HOSTNAME}:4001/health" >/dev/null || exit 1'
       interval: 5s
       timeout: 3s
   api:
@@ -45,7 +45,7 @@ services:
       SENTRY_DSN_API: ${API_SENTRY_DSN_API}
       MIX_ENV: prod
     healthcheck:
-      test: 'curl -s -f "http://$${HOSTNAME}:4000/" >/dev/null || exit 1'
+      test: 'curl -s -f "http://$${HOSTNAME}:4000/v2/health" >/dev/null || exit 1'
       interval: 5s
       timeout: 3s
   nginx:
