@@ -63,7 +63,7 @@ services:
       - tts:tts
       - api:api
     healthcheck:
-      test: 'curl -s -f -H "static.spaceage.mp" --insecure "https://$${HOSTNAME}/loadingurl/" >/dev/null || exit 1'
+      test: 'curl -s -f -H "Host: static.spaceage.mp" --insecure "https://$${HOSTNAME}/loadingurl/" >/dev/null || exit 1'
       interval: 5s
       timeout: 3s
   gmod:
