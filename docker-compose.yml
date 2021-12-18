@@ -19,7 +19,7 @@ services:
     volumes:
       - spaceage_forums_html:/var/www/forums
     healthcheck:
-      test: 'curl -s -f "http://$${HOSTNAME}:9000/" >/dev/null || exit 1'
+      test: 'nc -z "$${HOSTNAME}" 9000 || exit 1'
       interval: 5s
       timeout: 3s
   tts:
@@ -63,7 +63,7 @@ services:
       - tts:tts
       - api:api
     healthcheck:
-      test: 'curl -s -f -H "static.spaceage.mp" --insecure "https://$${HOSTNAME}/" >/dev/null || exit 1'
+      test: 'curl -s -f -H "static.spaceage.mp" --insecure "https://$${HOSTNAME}/loadingurl/" >/dev/null || exit 1'
       interval: 5s
       timeout: 3s
   gmod:
