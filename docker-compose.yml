@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
-      - spaceage_mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
     healthcheck:
       test: 'mysqladmin status >/dev/null || exit 1'
       interval: 60s
@@ -56,8 +56,8 @@ services:
     environment:
       DDNS_URL_IPV6: ${NGINX_DDNS_URL_IPV6}
     volumes:
-      - spaceage_forums_html:/var/www/forums
-      - spaceage_ssl:/etc/nginx/ssl
+      - forums_html:/var/www/forums
+      - ssl:/etc/nginx/ssl
     links:
       - php:php
       - tts:tts
@@ -70,14 +70,10 @@ services:
     build: gmod
     restart: always
     volumes:
-      - spaceage_server:/home/server
+      - server:/home/server
 
 volumes:
-  spaceage_forums_html:
-    external: true
-  spaceage_mysql:
-    external: true
-  spaceage_ssl:
-    external: true
-  spaceage_server:
-    external: true
+  forums_html: {}
+  mysql: {}
+  ssl: {}
+  server: {}
