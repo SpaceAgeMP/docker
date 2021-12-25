@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
-      - spaceage_mysql:/var/lib/mysql\
+      - spaceage_mysql:/var/lib/mysql
     healthcheck:
       test: 'mysqladmin status >/dev/null || exit 1'
       interval: 60s
