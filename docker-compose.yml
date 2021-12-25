@@ -17,7 +17,7 @@ services:
     links:
       - mysql:mysql
     volumes:
-      - spaceage_forums_html:/var/www/forums
+      - forums_html:/var/www/forums
     healthcheck:
       test: 'nc -z "$${HOSTNAME}" 9000 || exit 1'
       interval: 60s
