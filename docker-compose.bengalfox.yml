@@ -1,7 +1,6 @@
 version: "2.4"
 services:
   nginx:
-    ports: []
     networks:
       default:
         priority: 1
@@ -10,7 +9,6 @@ services:
         ipv4_address: 192.168.2.29
     mac_address: 00:16:3e:ca:7e:30
   gmod:
-    ports: []
     networks:
       default:
         priority: 1
