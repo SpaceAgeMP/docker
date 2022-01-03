@@ -4,19 +4,19 @@ services:
     networks:
       default:
         priority: 1
-      vlan2:
+      vlan3:
         priority: 100
-        ipv4_address: 192.168.2.29
+        ipv4_address: 10.3.10.5
     mac_address: 00:16:3e:ca:7e:30
   gmod:
     networks:
       default:
         priority: 1
-      vlan2:
+      vlan3:
         priority: 100
-        ipv4_address: 192.168.2.21
+        ipv4_address: 10.3.10.4
     mac_address: 00:16:3e:ca:7e:31
 
 networks:
-  vlan2:
+  vlan3:
     external: true
