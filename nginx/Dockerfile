@@ -10,8 +10,6 @@ RUN mkdir -p /var/www/static && \
     tar -x -v -f /tmp/site.tar.gz --strip 1 -C /var/www/static && \
     rm -f /tmp/site.tar.gz
 
-RUN /etc/nginx/cfips.sh
-
 VOLUME /etc/letsencrypt
 
 ENTRYPOINT ["s6-svscan", "/etc/s6"]
