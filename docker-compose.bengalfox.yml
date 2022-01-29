@@ -8,6 +8,8 @@ services:
         ipv4_address: 10.3.10.5
     mac_address: 00:16:3e:ca:7e:30
   gmod:
+    environment:
+      SRCDS_IP: 10.3.10.4
     networks:
       default:
         priority: 1
