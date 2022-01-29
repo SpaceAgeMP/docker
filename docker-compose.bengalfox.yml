@@ -1,8 +1,6 @@
 services:
   nginx:
     networks:
-      default:
-        priority: 1
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.5
@@ -11,8 +9,6 @@ services:
     environment:
       SRCDS_IP: 10.3.10.4
     networks:
-      default:
-        priority: 1
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.4
