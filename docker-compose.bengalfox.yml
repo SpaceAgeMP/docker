@@ -19,3 +19,9 @@ services:
 networks:
   vlan3:
     external: true
+  default:
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: fdd8:2357:cb1a:86c2::/64
+          gateway: fdd8:2357:cb1a:86c2::1
