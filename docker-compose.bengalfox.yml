@@ -1,5 +1,7 @@
 services:
   nginx:
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=0
     networks:
       default:
         priority: 1
@@ -8,6 +10,8 @@ services:
         ipv4_address: 10.3.10.5
     mac_address: 00:16:3e:ca:7e:30
   gmod:
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=0
     environment:
       SRCDS_IP: 10.3.10.4
     networks:
@@ -23,5 +27,5 @@ networks:
     enable_ipv6: true
     ipam:
       config:
-        - subnet: fdd8:2357:cb1a:86c2::/64
-          gateway: fdd8:2357:cb1a:86c2::1
+        - subnet: fdd8:2357:cb19:86c2::/64
+          gateway: fdd8:2357:cb19:86c2::1
