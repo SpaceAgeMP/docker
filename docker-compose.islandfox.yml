@@ -1,5 +1,19 @@
 services:
+  mysql:
+    dns:
+    - 10.3.0.53
+  php:
+    dns:
+    - 10.3.0.53
+  tts:
+    dns:
+    - 10.3.0.53
+  api:
+    dns:
+    - 10.3.0.53
   nginx:
+    dns:
+    - 10.3.0.53
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
     networks:
@@ -9,6 +23,8 @@ services:
         priority: 100
         ipv4_address: 10.3.10.5
   gmod:
+    dns:
+    - 10.3.0.53
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
     environment:
