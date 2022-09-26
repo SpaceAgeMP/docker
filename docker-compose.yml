@@ -48,7 +48,6 @@ services:
     volumes:
       - ssl:/etc/letsencrypt
     links:
-      - php:php
       - tts:tts
       - api:api
     healthcheck:
