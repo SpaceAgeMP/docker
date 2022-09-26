@@ -2,9 +2,6 @@ services:
   mysql:
     dns:
     - 10.6.0.53
-  php:
-    dns:
-    - 10.6.0.53
   tts:
     dns:
     - 10.6.0.53
