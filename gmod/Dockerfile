@@ -1,7 +1,7 @@
 FROM steamcmd/steamcmd:ubuntu
 
 RUN apt update && \
-        apt --no-install-recommends -y install python3 python3-requests python3-yaml python3-pip git openssh-client lsof libssl3 libboost-system && \
+        apt --no-install-recommends -y install python3 python3-requests python3-yaml python3-pip git openssh-client lsof libssl3 libboost-system1.74.0 && \
         rm -rf /var/cache/apt
 RUN pip3 install python_a2s
 
