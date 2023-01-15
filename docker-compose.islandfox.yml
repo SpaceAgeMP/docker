@@ -9,6 +9,7 @@ services:
     dns:
     - 10.6.0.53
   nginx:
+    mac_address: 62:bf:fb:e4:89:5d
     dns:
     - 10.3.0.53
     sysctls:
@@ -20,6 +21,7 @@ services:
         priority: 100
         ipv4_address: 10.3.10.5
   gmod:
+    mac_address: 5e:47:05:fc:f8:90
     dns:
     - 10.3.0.53
     sysctls:
