@@ -51,7 +51,7 @@ services:
       - tts:tts
       - api:api
     healthcheck:
-      test: 'curl -s -f --resolve "api.spaceage.mp:443:127.0.0.1" --insecure "https://api.spaceage.mp/v2/health" >/dev/null || exit 1'
+      test: 'curl -s -f --resolve "api.spaceage.doridian.net:443:127.0.0.1" --insecure "https://api.spaceage.doridian.net/v2/health" >/dev/null || exit 1'
       interval: 60s
       timeout: 10s
   gmod:
