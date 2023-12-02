@@ -32,6 +32,14 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.4
+  website:
+    mac_address: 5e:1a:40:6a:64:06
+    dns:
+    - 10.3.0.53
+    networks:
+      vlan3:
+        priority: 100
+        ipv4_address: 10.3.10.9
 
 networks:
   vlan3:
