@@ -25,10 +25,10 @@ services:
     dns:
     - 10.3.0.53
     extra_hosts:
-      - spaceage.doridian.net:10.3.10.9
-      - www.spaceage.doridian.net:10.3.10.9
-      - api.spaceage.doridian.net:10.3.10.5
-      - tts.spaceage.doridian.net:10.3.10.5
+      - spaceage.mp:10.3.10.9
+      - www.spaceage.mp:10.3.10.9
+      - api.spaceage.mp:10.3.10.5
+      - tts.spaceage.mp:10.3.10.5
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
     environment:
