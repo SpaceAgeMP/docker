@@ -1,7 +1,5 @@
 FROM steamcmd/steamcmd:ubuntu
 
-COPY etc/ /etc/
-
 RUN apt update && \
         apt -y dist-upgrade && \
         apt --no-install-recommends -y install python3 python3-requests python3-yaml python3-pip git openssh-client lsof libssl3 libboost-system1.74.0 && \
