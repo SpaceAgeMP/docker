@@ -57,8 +57,6 @@ services:
   gmod:
     build: gmod
     restart: always
-    cap_add:
-      - CAP_CHECKPOINT_RESTORE
     #ports:
     #  - 27015:27015
     #  - 27015:27015/udp
