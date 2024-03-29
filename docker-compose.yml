@@ -55,8 +55,10 @@ services:
       interval: 60s
       timeout: 10s
   gmod:
-    build: gmod
+    image: ghcr.io/spaceagemp/starlord/starlord:latest
     restart: always
+    env:
+      SPACEAGE_SERVER_TOKEN: ${SPACEAGE_SERVER_TOKEN}
     #ports:
     #  - 27015:27015
     #  - 27015:27015/udp
