@@ -59,6 +59,7 @@ services:
     restart: always
     env:
       SPACEAGE_SERVER_TOKEN: ${SPACEAGE_SERVER_TOKEN}
+      ENABLE_SELF_UPDATE: 'true'
     #ports:
     #  - 27015:27015
     #  - 27015:27015/udp
