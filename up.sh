@@ -3,7 +3,7 @@ set -e
 cd "$(dirname "$0")"
 git pull
 
-docker-compose -p spaceage pull
+docker-compose -p spaceage pull "$@"
 
 LOCALF="docker-compose.$(hostname).yml"
 if [ -f "$LOCALF" ]
