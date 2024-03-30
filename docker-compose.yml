@@ -57,7 +57,7 @@ services:
   gmod:
     image: ghcr.io/spaceagemp/starlord/starlord:latest
     restart: always
-    env:
+    environment:
       SPACEAGE_SERVER_TOKEN: ${SPACEAGE_SERVER_TOKEN}
       ENABLE_SELF_UPDATE: 'true'
     #ports:
