@@ -9,7 +9,6 @@ services:
     dns:
     - 10.6.0.53
   nginx:
-    mac_address: 62:bf:fb:e4:89:5d
     dns:
     - 10.3.0.53
     sysctls:
@@ -20,8 +19,8 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.5
+        mac_address: 62:bf:fb:e4:89:5d
   gmod:
-    mac_address: 5e:47:05:fc:f8:90
     dns:
     - 10.3.0.53
     extra_hosts:
@@ -37,14 +36,15 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.4
+        mac_address: 5e:47:05:fc:f8:90
   website:
-    mac_address: 5e:1a:40:6a:64:06
     dns:
     - 10.3.0.53
     networks:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.9
+        mac_address: 5e:1a:40:6a:64:06
 
 networks:
   vlan3:
