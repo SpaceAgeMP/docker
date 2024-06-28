@@ -5,7 +5,7 @@ git pull
 
 docker compose -p spaceage pull "$@"
 
-LOCALF="docker-compose.${HOST}.yml"
+LOCALF="docker-compose.$(hostname).yml"
 if [ -f "$LOCALF" ]
 then
     docker compose -p spaceage -f docker-compose.yml -f "$LOCALF" up -d --build --remove-orphans "$@"
