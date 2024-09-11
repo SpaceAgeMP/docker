@@ -2,6 +2,7 @@ services:
   mysql:
     dns:
     - 10.6.0.53
+    mem_limit: 1G
   tts:
     dns:
     - 10.6.0.53
