@@ -7,6 +7,10 @@ services:
     volumes:
       - mysql:/var/lib/mysql
       - mysql_logs:/var/log/mysql
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
     healthcheck:
       test: 'mysqladmin status >/dev/null || exit 1'
       interval: 60s
