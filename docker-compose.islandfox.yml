@@ -17,7 +17,7 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.5
-        ipv6_address: fd2c:f4cb:63be:0::0a03:0a05
+        ipv6_address: fd2c:f4cb:63be:3::0a05
         mac_address: 62:bf:fb:e4:89:5d
   gmod:
     dns:
@@ -33,7 +33,7 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.4
-        ipv6_address: fd2c:f4cb:63be:0::0a03:0a04
+        ipv6_address: fd2c:f4cb:63be:3::0a04
         mac_address: 5e:47:05:fc:f8:90
   website:
     dns:
@@ -42,7 +42,7 @@ services:
       vlan3:
         priority: 100
         ipv4_address: 10.3.10.9
-        ipv6_address: fd2c:f4cb:63be:0::0a03:0a09
+        ipv6_address: fd2c:f4cb:63be:3::0a09
         mac_address: 5e:1a:40:6a:64:06
 
 networks:
