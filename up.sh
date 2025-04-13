@@ -3,6 +3,8 @@ set -e
 cd "$(dirname "$0")"
 git pull
 
+export COMPOSE_BAKE=true
+
 docker compose -p spaceage pull "$@"
 
 LOCALF="docker-compose.$(hostname).yml"
