@@ -3,7 +3,7 @@ set -e
 cd "$(dirname "$0")"
 git pull
 
-export COMPOSE_BAKE=true
+#export COMPOSE_BAKE=true
 
 docker compose -p spaceage pull "$@"
 
