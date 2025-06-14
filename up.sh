@@ -1,7 +1,6 @@
 #!/bin/sh
 set -ex
 cd "$(dirname "$0")"
-git pull
 
 compose_file_args=('-f' 'docker-compose.yml')
 local_file="docker-compose.$(hostname).yml"
