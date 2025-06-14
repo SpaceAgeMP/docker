@@ -1,15 +1,16 @@
 #!/bin/sh
-set -e
+set -ex
 cd "$(dirname "$0")"
 git pull
 
-LOCALF="docker-compose.$(hostname).yml"
-if [ ! -f "$LOCALF" ]; then
-    LOCALF=/dev/null
+compose_file_args=('-f' 'docker-compose.yml')
+local_file="docker-compose.$(hostname).yml"
+if [ -f "$local_file" ]; then
+    compose_file_args+=('-f' "$local_file")
 fi
 
 run_compose() {
-    docker compose -p spaceage -f docker-compose.yml -f "$LOCALF" "$@"
+    docker compose -p spaceage "${compose_file_args[@]}" "$@"
 }
 
 run_compose pull "$@"
